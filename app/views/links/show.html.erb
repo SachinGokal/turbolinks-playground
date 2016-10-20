@@ -1,0 +1,11 @@
+<% 2000.times do %>
+  <table border="1" cellpadding="5" cellspacing="5">
+    <% @links.each do |link| %>
+    <tr>
+      <th>
+        <%= link_to link.name, link_path(link) %>
+      </th>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
