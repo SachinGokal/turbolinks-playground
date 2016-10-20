@@ -1,6 +1,5 @@
 class LinksController < ApplicationController
   def index
-    Link.find_or_create_by!(name: 'first_link')
     @links = Link.all
   end
 
@@ -8,6 +7,22 @@ class LinksController < ApplicationController
     @links = Link.all
   end
 
-  def edit
+  def new
+    @link = Link.new
+  end
+
+  def create
+    @link = Link.new(link_params)
+    if @link.save
+      redirect_to action: 'index'
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def link_params
+    params.require(:link).permit(:name)
   end
 end
