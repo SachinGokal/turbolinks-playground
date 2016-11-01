@@ -1,3 +1,4 @@
+<h4>Show</h4>
 <ul class="nav nav-tabs">
   <li><%= link_to 'Home', root_path %></li>
   <% @links.each_with_index do |link, index| %>
@@ -7,16 +8,12 @@
   <% end %>
 </ul>
 
-<%= Link.count %>
+<strong><%= @link.name %></strong>
 
-<% 500.times do %>
-  <table border="1" cellpadding="5" cellspacing="5">
-    <% @links.each do |link| %>
-      <tr>
-        <th>
-          <%= link_to link.name, link_path(link) %>
-        </th>
-      </tr>
-    <% end %>
-  </table>
+<% 5000.times do %>
+  <% @links.each do |link| %>
+    <p>
+      <%= link_to link.name, link_path(link) %>
+    </p>
+  <% end %>
 <% end %>

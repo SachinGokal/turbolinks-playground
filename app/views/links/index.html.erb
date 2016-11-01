@@ -1,12 +1,12 @@
+<h4>Index</h4>
+
 <ul class="nav nav-tabs">
   <li class="active"><%= link_to 'Home', root_path %></li>
   <% @links.each do |link| %>
     <li><%= link_to link.name, link_path(link) %></li>
   <% end %>
 </ul>
-
-<%= link_to 'New Link', new_link_path %>
-
-<button class="push">Push to increment count</button>
-
-<div id="cart-counter" data-turbolinks-permanent></div>
+<br>
+<p><%= link_to 'New Link', new_link_path %></p>
+<p><button class="push">Push to increment count</button></p>
+<p><div id="counter" data-turbolinks-permanent></div></p>
